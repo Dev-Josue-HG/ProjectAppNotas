@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav"
+    app:startDestination="@id/pagina_inicio">
+
+    <fragment
+        android:id="@+id/pagina_inicio"
+        android:name="com.intecap.notas.InicioFragment"
+        tools:layout="@layout/fragment_inicio"/>
+
+    <fragment
+        android:id="@+id/pagina_agregar"
+        android:name="com.intecap.notas.AgregarNotaFragment"
+        tools:layout="@layout/fragment_agregar_nota"/>
+
+    <fragment
+        android:id="@+id/pagina_detalles"
+        android:name="com.intecap.notas.DetallesNotasFragment"
+        tools:layout="@layout/fragment_detalles_notas"/>
+
+</navigation>
