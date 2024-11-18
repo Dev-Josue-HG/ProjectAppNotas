@@ -3,12 +3,14 @@ package com.intecap.notas;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -20,6 +22,8 @@ public class AgregarNotaFragment extends Fragment {
     FloatingActionButton fab;
     private List<String> notasList; // Lista para almacenar las notas
     private NotasAdapter notasAdapter; // Adaptador para la RecyclerView
+
+    private NotasViewModel notasViewModel;
 
     public AgregarNotaFragment() {
         // Constructor público requerido
@@ -38,6 +42,9 @@ public class AgregarNotaFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        notasViewModel = new ViewModelProvider(requireActivity()).get(NotasViewModel.class);
+
         // Infla la vista del fragmento
         View view = inflater.inflate(R.layout.fragment_agregar_nota, container, false);
 
@@ -57,6 +64,11 @@ public class AgregarNotaFragment extends Fragment {
                 notasAdapter.notifyItemInserted(notasList.size() - 1);
                 Toast.makeText(getActivity(), "Nota agregada", Toast.LENGTH_SHORT).show();
             }
+
+
+            //EditText inputNota = view.findViewById(R.id.inputNota);
+
+
         });
 
         return view;
