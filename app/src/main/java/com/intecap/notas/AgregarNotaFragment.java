@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -48,25 +49,37 @@ public class AgregarNotaFragment extends Fragment {
         // Infla la vista del fragmento
         View view = inflater.inflate(R.layout.fragment_agregar_nota, container, false);
 
-        // Configura el RecyclerView
-        RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        notasAdapter = new NotasAdapter(notasList);
-        recyclerView.setAdapter(notasAdapter);
+        EditText inputNota = view.findViewById(R.id.inputNota);
+        Button btnGuardar = view.findViewById(R.id.btnGuardar);
 
-        // Inicializa el FloatingActionButton
-        FloatingActionButton fab = view.findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Agrega una nueva nota a la lista
-                notasList.add("Nueva Nota " + (notasList.size() + 1));
-                notasAdapter.notifyItemInserted(notasList.size() - 1);
-                Toast.makeText(getActivity(), "Nota agregada", Toast.LENGTH_SHORT).show();
+        btnGuardar.setOnClickListener(v -> {
+            String nota = inputNota.getText().toString();
+            if(!nota.isEmpty()){
+                notasViewModel.agregarNota(nota);
+                inputNota.setText("");
+                Toast.makeText(getContext(), "Nota agregada", Toast.LENGTH_SHORT).show();
             }
 
 
-            //EditText inputNota = view.findViewById(R.id.inputNota);
+
+
+
+        // Configura el RecyclerView
+//        RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
+//        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+//        notasAdapter = new NotasAdapter(notasList);
+//        recyclerView.setAdapter(notasAdapter);
+//
+//        // Inicializa el FloatingActionButton
+//        FloatingActionButton fab = view.findViewById(R.id.fab);
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                // Agrega una nueva nota a la lista
+//                notasList.add("Nueva Nota " + (notasList.size() + 1));
+//                notasAdapter.notifyItemInserted(notasList.size() - 1);
+//                Toast.makeText(getActivity(), "Nota agregada", Toast.LENGTH_SHORT).show();
+//            }
 
 
         });

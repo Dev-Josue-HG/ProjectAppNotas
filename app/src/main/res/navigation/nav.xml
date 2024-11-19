@@ -8,7 +8,12 @@
     <fragment
         android:id="@+id/pagina_inicio"
         android:name="com.intecap.notas.InicioFragment"
-        tools:layout="@layout/fragment_inicio"/>
+        tools:layout="@layout/fragment_inicio">
+
+        <action
+            android:id="@+id/action_pagina_inicio_to_pagina_detalles"
+            app:destination="@+id/pagina_detalles"/>
+    </fragment>
 
     <fragment
         android:id="@+id/pagina_agregar"

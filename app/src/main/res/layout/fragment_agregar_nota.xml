@@ -13,7 +13,6 @@
         android:gravity="center"
         android:textSize="36sp"
         android:text="@string/AgregarNota">
-
     </TextView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -32,5 +31,20 @@
         android:layout_marginTop="8dp" />
     />
 
+    <EditText
+        android:id="@+id/inputNota"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Escribe tu nota aquí"
+        android:inputType="text"
+        android:padding="16dp" />
+
+    <Button
+        android:id="@+id/btnGuardar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="450dp"
+        android:layout_marginLeft="140dp"
+        android:text="Guardar Nota" />
 
 </FrameLayout>

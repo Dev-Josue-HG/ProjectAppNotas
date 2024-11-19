@@ -3,8 +3,8 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="InicioFragmento">(Todas las notas)</string>
-    <string name="DetalleNotas">Fragmento de los detalles de notas</string>
-    <string name="AgregarNota">Fragmento de Agregar Notas</string>
+    <string name="DetalleNotas">Detalles</string>
+    <string name="AgregarNota">Agrega tus Notas</string>
     <string name="ItemInicio">Inicio</string>
     <string name="ItemAgregar">Nueva Nota</string>
     <string name="ItemDetalles">Detalles</string>

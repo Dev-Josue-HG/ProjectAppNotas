@@ -13,4 +13,35 @@
         android:textSize="36sp"
         android:text="@string/DetalleNotas" />
 
+    <TextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Detalles de Nota seleccionada"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:paddingBottom="8dp" />
+
+    <!-- Fecha o metadata -->
+    <TextView
+        android:id="@+id/textViewDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Fecha: 18/11/2024"
+        android:textSize="16sp"
+        android:layout_marginTop="80dp"
+        android:paddingBottom="8dp"
+        />
+
+    <!-- Contenido de la nota -->
+    <TextView
+        android:id="@+id/textViewContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginTop="45dp"
+        android:text="contenido"
+        android:textSize="18sp"
+        />
+
 </FrameLayout>
